@@ -2256,8 +2256,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 780605681}
-  m_LocalRotation: {x: 0.18485548, y: 0.79106617, z: 0.28859094, w: -0.506713}
-  m_LocalPosition: {x: 292.79724, y: -38.78743, z: 98.14227}
+  m_LocalRotation: {x: -0.32238927, y: 0.58536476, z: 0.27265173, w: 0.69215196}
+  m_LocalPosition: {x: -110.14148, y: -361.75842, z: 4.145157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4512,7 +4512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ce0c58f08a0314bb3e5f63e002d967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadLevel: Mountains
+  loadLevel: Valley
 --- !u!23 &1393592512
 MeshRenderer:
   m_ObjectHideFlags: 0
