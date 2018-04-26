@@ -352,7 +352,7 @@ TerrainCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 113877403}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 23aecea85e4618148bb267b5306fc82e, type: 2}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 6fe47bfff28906e448bd5e7c809829a5, type: 2}
   m_EnableTreeColliders: 1
@@ -2256,8 +2256,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 780605681}
-  m_LocalRotation: {x: -0.32238927, y: 0.58536476, z: 0.27265173, w: 0.69215196}
-  m_LocalPosition: {x: -110.14148, y: -361.75842, z: 4.145157}
+  m_LocalRotation: {x: -0.01590001, y: 0.96863264, z: 0.23950444, w: 0.06430964}
+  m_LocalPosition: {x: 255.47174, y: -43.635426, z: 142.45602}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2712,7 +2712,7 @@ MonoBehaviour:
     smooth: 0
     smoothTime: 5
     lockCursor: 1
-  m_UseFovKick: 1
+  m_UseFovKick: 0
   m_FovKick:
     Camera: {fileID: 0}
     originalFov: 0
@@ -6576,7 +6576,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 860850235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 250, y: 31, z: 32.3}
+  m_LocalPosition: {x: 250, y: 33, z: 32.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 332412481}
