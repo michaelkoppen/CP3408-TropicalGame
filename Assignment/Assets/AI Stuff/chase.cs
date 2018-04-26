@@ -10,6 +10,7 @@ public class chase : MonoBehaviour {
 	Animator anim;
 	private bool collidedWithPlayer = false;
 	NavMeshAgent nav;
+	public string character;
 
 	string state = "patrol";
 	public GameObject[] waypoints;

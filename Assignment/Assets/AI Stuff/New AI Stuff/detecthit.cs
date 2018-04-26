@@ -42,6 +42,8 @@ public class detecthit : MonoBehaviour {
 			damage = 20f;
 		} else if (character == "skeleton") {
 			damage = 30f;
+		} else if (character == "golem") {
+			damage = 30f;
 		}
 	}
 	
