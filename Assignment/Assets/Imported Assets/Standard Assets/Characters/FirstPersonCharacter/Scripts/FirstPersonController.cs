@@ -10,6 +10,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+		public CharacterController controller;
+		void Example() {
+			controller = GetComponent<CharacterController>();
+			controller.slopeLimit = 90.0F;
+		}
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
