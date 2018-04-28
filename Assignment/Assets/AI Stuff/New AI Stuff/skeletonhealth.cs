@@ -8,6 +8,7 @@ public class skeletonhealth : MonoBehaviour {
 	public float maxHealth = 100f;
 	public float currentHealth = 0f;
 	public Slider healthbar;
+	Animator anim;
 
 
 	// Use this for initialization
@@ -18,18 +19,20 @@ public class skeletonhealth : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+		
 	}
 
 	public void healthUpdate(float damage) {
-		if (currentHealth < 0) {
-			//Do death stuff
-		} else {
-			currentHealth += damage;
-			healthbar.value = currentHealth;
-			Debug.Log ("Damage Dealt:" + damage);
-			Debug.Log ("Current Health:" + currentHealth);
-			Debug.Log ("Current Health:" + healthbar.value);
+		currentHealth += damage;
+		healthbar.value = currentHealth;
+		if (currentHealth <= 0) {
+			Death ();
 		}
+	}
+
+	public void Death() {
+		Destroy (gameObject, 1f);
+		anim.SetTrigger ("isDead");
+
 	}
 }
