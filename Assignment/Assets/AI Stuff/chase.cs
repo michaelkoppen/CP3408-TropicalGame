@@ -50,58 +50,31 @@ public class chase : MonoBehaviour {
 			//rotate towards next waypoint
 			direction = waypoints [currentWP].transform.position - transform.position;
 			this.transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (direction), rotSpeed * Time.deltaTime);
-			//this.transform.Translate (0, 0, Time.deltaTime * moveSpeed);
-			nav.SetDestination (waypoints[currentWP].transform.position);
+			this.transform.Translate (0, 0, Time.deltaTime * moveSpeed);
 		}
 
-		if (character == "skeleton") {
-			if (Vector3.Distance (player.position, this.transform.position) < 5 || state == "pursuing") {
-				state = "pursuing";
-				//nav.SetDestination (player.position);
-				this.transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.LookRotation (direction), rotSpeed * Time.deltaTime);
-				if (direction.magnitude > 2) {
-					//this.transform.Translate (0, 00, Time.deltaTime * moveSpeed);
-					nav.SetDestination (player.position);
-					anim.SetBool ("isIdle", false);
-					anim.SetBool ("isWalking", true);
-					anim.SetBool ("isAttacking", false);
-				} else {
-					this.transform.Translate (0, 00, 0);
-					anim.SetBool ("isIdle", false);
-					anim.SetBool ("isWalking", false);
-					anim.SetBool ("isAttacking", true);
-				}
-			} else {
-				state = "patrol";
+		if (Vector3.Distance (player.position, this.transform.position) < 5 || state == "pursuing") {
+			state = "pursuing";
+			//nav.SetDestination (player.position);
+			this.transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.LookRotation (direction), rotSpeed * Time.deltaTime);
+			if (direction.magnitude > 2) {
+				//this.transform.Translate (0, 00, Time.deltaTime * moveSpeed);
+				nav.SetDestination (player.position);
 				anim.SetBool ("isIdle", false);
 				anim.SetBool ("isWalking", true);
 				anim.SetBool ("isAttacking", false);
-			}
-		} else if (character == "golem") {
-			if (Vector3.Distance (player.position, this.transform.position) < 15 || state == "pursuing") {
-				state = "pursuing";
-				//nav.SetDestination (player.position);
-				this.transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.LookRotation (direction), rotSpeed * Time.deltaTime);
-				if (direction.magnitude > 8) {
-					//this.transform.Translate (0, 00, Time.deltaTime * moveSpeed);
-					nav.SetDestination (player.position);
-					anim.SetBool ("isIdle", false);
-					anim.SetBool ("isWalking", true);
-					anim.SetBool ("isAttacking", false);
-				} else {
-					this.transform.Translate (0, 00, 0);
-					anim.SetBool ("isIdle", false);
-					anim.SetBool ("isWalking", false);
-					anim.SetBool ("isAttacking", true);
-				}
 			} else {
-				state = "patrol";
+				this.transform.Translate (0, 00, 0);
 				anim.SetBool ("isIdle", false);
-				anim.SetBool ("isWalking", true);
-				anim.SetBool ("isAttacking", false);
+				anim.SetBool ("isWalking", false);
+				anim.SetBool ("isAttacking", true);
 			}
+		} else {
+			state = "patrol";
+			anim.SetBool ("isIdle", false);
+			anim.SetBool ("isWalking", true);
+			anim.SetBool ("isAttacking", false);
 		}
-
 		//if (Vector3.Distance (player.position, this.transform.position) < 10) {
 		//	
 		//
