@@ -2258,12 +2258,17 @@ Transform:
   m_GameObject: {fileID: 780605681}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalRotation: {x: -0.20771888, y: 0.7554097, z: 0.28381974, w: 0.5528612}
   m_LocalPosition: {x: 40.47563, y: -207.09341, z: 140.03679}
 =======
   m_LocalRotation: {x: -0.16549018, y: 0.50198066, z: 0.09852579, w: 0.8431614}
   m_LocalPosition: {x: 218.75418, y: -28.591087, z: 68.46466}
 >>>>>>> 7a57dc574e70d95b36bf123dd2cc6d1cfdbdc5cc
+=======
+  m_LocalRotation: {x: -0.01590001, y: 0.96863264, z: 0.23950444, w: 0.06430964}
+  m_LocalPosition: {x: 255.47174, y: -43.635426, z: 142.45602}
+>>>>>>> parent of 7a57dc5... fix enemy pathfinding
 =======
   m_LocalRotation: {x: -0.01590001, y: 0.96863264, z: 0.23950444, w: 0.06430964}
   m_LocalPosition: {x: 255.47174, y: -43.635426, z: 142.45602}
