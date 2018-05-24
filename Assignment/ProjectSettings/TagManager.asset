@@ -7,6 +7,8 @@ TagManager:
   - Test
   - enemy
   - player
+  - boulder
+  - lava
   layers:
   - Default
   - TransparentFX

@@ -12,5 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Island.unity
     guid: 6f7f48ab26595a24f9e8386b50985e7e
   - enabled: 1
-    path: Assets/Scenes/Mountains.unity
+    path: Assets/Scenes/Valley.unity
     guid: c9928ad9411420440887f81d4bf5c4de
+  - enabled: 1
+    path: Assets/Castle.unity
+    guid: 96371c3db7efb27488f9ccee9091835d

@@ -9,8 +9,15 @@ public class MoveScene : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
 	{
+		
 		if (other.CompareTag ("Player")) {
 			SceneManager.LoadScene (loadLevel);
 		}
+
+		print ("tehe");
+		if (other.CompareTag("boulder")) {
+			Destroy (other.gameObject);
+		}
+
 	}
 }
