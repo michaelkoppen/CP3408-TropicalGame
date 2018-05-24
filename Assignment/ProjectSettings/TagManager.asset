@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Test
   - enemy
-  - player
   - boulder
   - lava
   layers:

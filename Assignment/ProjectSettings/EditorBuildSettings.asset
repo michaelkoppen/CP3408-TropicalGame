@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Valley.unity
     guid: c9928ad9411420440887f81d4bf5c4de
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Castle.unity
-    guid: 96371c3db7efb27488f9ccee9091835d
+    path: Assets/Scenes/Castle.unity
+    guid: 870d002af39b11a4dba8477a2afecad9
+  - enabled: 1
+    path: Assets/Scenes/WakeUpMenu.unity
+    guid: e94bdfeeb1bf9194e813b5fce6561c79
