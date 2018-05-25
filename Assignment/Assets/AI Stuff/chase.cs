@@ -31,7 +31,8 @@ public class chase : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		Vector3 direction = player.position - this.transform.position;
 		direction.y = 0;
 		//float angle = Vector3.Angle (direction, head.up);
@@ -51,32 +52,38 @@ public class chase : MonoBehaviour {
 			direction = waypoints [currentWP].transform.position - transform.position;
 			this.transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (direction), rotSpeed * Time.deltaTime);
 			//this.transform.Translate (0, 0, Time.deltaTime * moveSpeed);
-			nav.SetDestination (waypoints[currentWP].transform.position);
+			nav.SetDestination (waypoints [currentWP].transform.position);
 		}
 
 		if (character == "skeleton") {
-			if (Vector3.Distance (player.position, this.transform.position) < 5 || state == "pursuing") {
-				state = "pursuing";
-				//nav.SetDestination (player.position);
-				this.transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.LookRotation (direction), rotSpeed * Time.deltaTime);
-				if (direction.magnitude > 2) {
-					//this.transform.Translate (0, 00, Time.deltaTime * moveSpeed);
-					nav.SetDestination (player.position);
+			if (anim.GetBool ("isDead")) {
+				nav.SetDestination (this.transform.position);
+				Destroy (gameObject, 2.5f);
+			} else {
+				if (Vector3.Distance (player.position, this.transform.position) < 5 || state == "pursuing") {
+					state = "pursuing";
+					//nav.SetDestination (player.position);
+					this.transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.LookRotation (direction), rotSpeed * Time.deltaTime);
+					if (direction.magnitude > 2) {
+						//this.transform.Translate (0, 00, Time.deltaTime * moveSpeed);
+						nav.SetDestination (player.position);
+						anim.SetBool ("isIdle", false);
+						anim.SetBool ("isWalking", true);
+						anim.SetBool ("isAttacking", false);
+					} else {
+						this.transform.Translate (0, 00, 0);
+						anim.SetBool ("isIdle", false);
+						anim.SetBool ("isWalking", false);
+						anim.SetBool ("isAttacking", true);
+					}
+				} else {
+					state = "patrol";
 					anim.SetBool ("isIdle", false);
 					anim.SetBool ("isWalking", true);
 					anim.SetBool ("isAttacking", false);
-				} else {
-					this.transform.Translate (0, 00, 0);
-					anim.SetBool ("isIdle", false);
-					anim.SetBool ("isWalking", false);
-					anim.SetBool ("isAttacking", true);
 				}
-			} else {
-				state = "patrol";
-				anim.SetBool ("isIdle", false);
-				anim.SetBool ("isWalking", true);
-				anim.SetBool ("isAttacking", false);
 			}
+
 		} else if (character == "golem") {
 			if (Vector3.Distance (player.position, this.transform.position) < 15 || state == "pursuing") {
 				state = "pursuing";
@@ -101,7 +108,8 @@ public class chase : MonoBehaviour {
 				anim.SetBool ("isAttacking", false);
 			}
 		}
-
+	}
+}
 		//if (Vector3.Distance (player.position, this.transform.position) < 10) {
 		//	
 		//
@@ -142,34 +150,33 @@ public class chase : MonoBehaviour {
 		//		this.transform.Translate (0, 0, 0.05f);
 		//	}
 		//}
-	}
+	
 		
 
 
-	IEnumerator Wander() {
-		int rotTime = Random.Range (1, 3);
-		int rotateWait = Random.Range (1, 4);
-		int rotateLorR = Random.Range (1, 2);
-		int walkWait = Random.Range (1, 4);
-		int walkTime = Random.Range (1, 5);
-
-		isWandering = true;
-
-		yield return new WaitForSeconds (walkWait);
-		isWalking = true;
-		yield return new WaitForSeconds (walkTime);
-		isWalking = false;
-		yield return new WaitForSeconds (rotateWait);
-		if (rotateLorR == 1) {
-			isRotatingRight = true;
-			yield return new WaitForSeconds (rotTime);
-			isRotatingRight = false;
-		}
-		if (rotateLorR == 2) {
-			isRotatingLeft = true;
-			yield return new WaitForSeconds (rotTime);
-			isRotatingLeft = false;
-		}
-		isWandering = false;
-	}
-}
+	//IEnumerator Wander() {
+	//	int rotTime = Random.Range (1, 3);
+	//	int rotateWait = Random.Range (1, 4);
+	//	int rotateLorR = Random.Range (1, 2);
+	//	int walkWait = Random.Range (1, 4);
+	//	int walkTime = Random.Range (1, 5);
+	//
+	//	isWandering = true;
+	//
+	//	yield return new WaitForSeconds (walkWait);
+	//	isWalking = true;
+	//	yield return new WaitForSeconds (walkTime);
+	//	isWalking = false;
+	//	yield return new WaitForSeconds (rotateWait);
+	//	if (rotateLorR == 1) {
+	//		isRotatingRight = true;
+	//		yield return new WaitForSeconds (rotTime);
+	//		isRotatingRight = false;
+	//	}
+	//	if (rotateLorR == 2) {
+	//		isRotatingLeft = true;
+	//		yield return new WaitForSeconds (rotTime);
+	//		isRotatingLeft = false;
+	//	}
+	//	isWandering = false;
+	//}

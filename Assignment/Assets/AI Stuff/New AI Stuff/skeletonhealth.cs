@@ -24,7 +24,7 @@ public class skeletonhealth : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		anim = GetComponent<Animator> ();
 		currentHealth = maxHealth;
 
 		//KYLE ADDED THIS
@@ -70,8 +70,11 @@ public class skeletonhealth : MonoBehaviour {
 		if(gameObject.CompareTag("Player") && loadLevel != null) {
 			SceneManager.LoadScene (loadLevel);	
 		} else {
-			Destroy (gameObject, 1f);
-			anim.SetTrigger ("isDead");
+			//Destroy (gameObject, 1f);
+			anim.SetBool ("isDead", true);
+			anim.SetBool ("isWalking", false);
+			anim.SetBool ("isAttacking", false);
+			anim.SetBool ("isIdle", false);
 		}
 
 		//END OF ADDING
